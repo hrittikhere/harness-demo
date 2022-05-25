@@ -1,45 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deployment Successful</title>
-    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
-    <script>
-        import { swarmBackground } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js'
 
-        const bg = swarmBackground({
-            el: document.getElementById('app'),
-            eventsEl: document.body,
-            gpgpuSize: 256,
-            color: [Math.random() * 0xffffff, Math.random() * 0xffffff],
-            geometry: 'default'
-        })
-
-        bg.three.camera.position.set(0, 0, 200)
-
-        document.body.addEventListener('click', () => {
-            bg.setColors([Math.random() * 0xffffff, Math.random() * 0xffffff])
-        })
-
-
-    </script>
 
 
 </head>
-
 <body>
-    <div id="app">
-        <div id="hero">
-            <h1>Deployment<br />Successful</h1>
-            <a target="_blank" href="https://harness.io/">Harness</a>
-        </div>
-    </div>
 
+<h1>Love</h1> 
+
+    
 </body>
+
+
+
 
 </html>
 
-<!-- Credits https://codepen.io/soju22/pen/GRQMzBa -->
