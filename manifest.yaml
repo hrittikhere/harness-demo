@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: harness-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: harness-demo
+  template:
+    metadata:
+      labels:
+        app: harness-demo
+    spec:
+      containers:
+      - name: hanrness-demo
+        image: hrittik/portainer:latest
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: harness-cd-service
+spec:
+  selector:
+    app: harness-demo
+  ports:
+    - port: 5000
+      targetPort: 5000
+  type: LoadBalancer
