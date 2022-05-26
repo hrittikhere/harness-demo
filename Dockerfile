@@ -1,12 +1,10 @@
+FROM python:3.8-alpine
 
-FROM python:3.9
+COPY deploy/ /deploy
+WORKDIR /deploy
 
-WORKDIR /code
+RUN pip install -r requirements.txt 
 
-COPY ./requirements.txt /code/requirements.txt
+EXPOSE 5000
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
- 
-COPY . /code/
-
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
+CMD ["python", "app.py", "--host=0.0.0.0"]
