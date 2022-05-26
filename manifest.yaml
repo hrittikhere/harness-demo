@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: hanrness-demo
-        image: hrittik/portainer:latest
+        image: hrittik/harness:latest
         ports:
         - containerPort: 5000
 ---
